@@ -1534,3 +1534,6 @@ Then in the index.html.erb (listings page) add the following link as one of the 
 <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
 
 
+
+
+Test
