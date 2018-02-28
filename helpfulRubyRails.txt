@@ -1,0 +1,1536 @@
+Working with Strings - Text with directions, references and code
+Section 2, Lecture 19
+
+To start irb console:
+
+irb
+
+String concat structure:
+
+String1 + String2
+
+String1 + " " + String2 + String3
+
+To find out what class the object belongs to:
+
+Variable_name.class
+
+1.class
+
+To find out methods available to an object:
+
+objectname.methods
+
+Some methods that can be used on objects:
+
+objectname.nil?
+
+objectname.empty?
+
+objectname.length
+
+objectname.reverse
+
+String interpolation (remember has to be within double quotes):
+
+name = "Mashrur"
+
+"My name is #{name}"
+
+**This will print out the value of name in the line "My name is...."
+
+To escape the evaluation of #{variablename} within a String, prepent with a \:
+
+\#{variablename}
+
+To get input from the command line use the following method:
+
+gets.chomp
+
+To assign the input to a variable so it can be referenced later on:
+
+variablename = gets.chomp
+
+
+
+Homework Solution: Analyzer program code
+Section 2, Lecture 20
+
+puts "Please enter your first name"
+
+first_name = gets.chomp
+
+puts "Please enter your last name"
+
+last_name = gets.chomp
+
+puts "Welcome to the analyzer program #{first_name} #{last_name}"
+
+puts "Your first name has #{first_name.length} characters in it"
+
+puts "Your last name has #{last_name.length} characters in it"
+
+full_name = first_name + " " + last_name
+
+puts "Your name in reverse reads #{full_name.reverse}"
+
+
+
+Working with numbers - Text with directions, references and code
+Section 2, Lecture 22
+
+To add and display the value of 1 + 2:
+
+puts 1 + 2
+
+Different operations:
+
+1 + 2
+
+1 * 2
+
+1 / 2
+
+1 - 2
+
+1 % 2
+
+To indicate a number is a float instead of an integer include a . in the number:
+
+20 is an integer, 20.0 is a float
+
+or
+
+20.to_f
+
+Methods you can use:
+
+object.odd?
+
+22.odd?
+
+object.even?
+
+22.even?
+
+Comparisons:
+
+a == b
+
+1 == 2
+
+3 == 3
+
+5 < 2
+
+2 <= 5
+
+5 > 2
+
+5 && 6
+
+5 || 6
+
+Generate a random number between 0 and less than 10:
+
+rand(10)
+
+To convert an string object to integer:
+
+objectname.to_i
+
+"5".to_i
+
+To convert an object to string:
+
+objectname.to_s
+
+5.to_s
+
+
+
+Homework Solution: Working with numbers - Analyzer
+Section 2, Lecture 23
+
+puts "Please enter your first name"
+
+first_name = gets.chomp
+
+puts "Please enter your last name"
+
+last_name = gets.chomp
+
+puts "Welcome to the analyzer program #{first_name} #{last_name}"
+
+puts "Your first name has #{first_name.length} characters in it"
+
+puts "Your last name has #{last_name.length} characters in it"
+
+full_name = first_name + " " + last_name
+
+puts "Your name in reverse reads #{full_name.reverse}"
+
+# Video 10 solutions below
+
+puts "Please enter your first number"
+
+first_number = gets.chomp
+
+puts "Please enter your second number"
+
+second_number = gets.chomp
+
+puts "The first number multiplied by the second number is: #{first_number.to_i * second_number.to_i}"
+
+puts "The first number divided by the second number is: #{first_number.to_f / second_number.to_f}"
+
+puts "The first number subtracted from the second number is: #{second_number.to_i - first_number.to_i}"
+
+puts "The first number mod the second number is: #{first_number.to_i % second_number.to_i}"
+
+
+
+Methods and Branching - Text with directions, references and code
+Section 2, Lecture 25
+
+Structure of an if condition:
+
+if #condition
+
+#execute logic
+
+end
+
+#variant
+
+if #condition
+
+#execute logic
+
+else
+
+#execute different logic
+
+end
+
+#variant
+
+if #condition
+
+#execute logic
+
+elsif #different condition
+
+#execute logic 2
+
+else
+
+#execute logic 3
+
+end
+
+Code worked on:
+
+def multiply(first_number, second_number)
+
+first_number.to_f * second_number.to_f
+
+end
+
+def divide(first_number, second_number)
+
+first_number.to_f / second_number.to_f
+
+end
+
+def subtract(first_number, second_number)
+
+second_number.to_f - first_number.to_f
+
+end
+
+def mod(first_number, second_number)
+
+first_number.to_f % second_number.to_f
+
+end
+
+puts "What do you want to do? 1) multiply 2) divide 3) subtract 4) find remainder"
+
+prompt = gets.chomp
+
+puts "Enter in your first number"
+
+first_number = gets.chomp
+
+puts "Enter in your second number"
+
+second_number = gets.chomp
+
+if prompt == '1'
+
+puts "You have chosen to multiply #{first_number} with #{second_number}"
+
+result = multiply(first_number, second_number)
+
+elsif prompt == '2'
+
+puts "You have chosen to divide"
+
+result = divide(first_number, second_number)
+
+elsif prompt == '3'
+
+puts "You have chosen to subtract"
+
+result = subtract(first_number, second_number)
+
+elsif prompt == '4'
+
+puts "You have chosen to find the remainder"
+
+result = mod(first_number, second_number)
+
+else
+
+puts "You have made an invalid choice"
+
+end
+
+puts "The result is #{result}"
+
+
+
+Arrays and Iterators - Text with directions, references and code
+Section 2, Lecture 27
+
+Array, created by including elements within square brackets:
+
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+The index for an array starts with 0, so in the array above a[0] is 1
+
+Some methods you can use on arrays:
+
+arrayname.empty?
+
+arrayname.include?(itemname)
+
+arrayname.reverse
+
+arrayname.reverse! # use ! at the end to change the original array
+
+arrayname.shuffle
+
+arrayname.push(30) # will append new element 30 to the end array
+
+arrayname << 25 # << known as shovel operator will also append new element to the end of the array
+
+arrayname.unshift("someelement") # will add element "some element" to the beginning of the array
+
+arrayname.pop # will remove the last element of the array and return 1
+
+arrayname.uniq # will remove all the duplicates and display (will not change the original array)
+
+arrayname.uniq! # will remove all the duplicates in the original array
+
+A range:
+
+(0..25).to_a
+
+will create an array with elements from value 0 to 25
+
+(0..99).to_a.shuffle!
+
+will create an array with elements from value 0 to 99 in random order
+
+To loop through an array named y using the .each method and print out the value of each element:
+
+y.each { |i| puts i }
+
+In plain terms: For each element i in array y print the value of i
+
+To execute iteration through an array called names using a block:
+
+names.each do |randomvariablename| # starts the do block
+
+puts "Hello #{randomvariablename}" # executes code for each element
+
+end # ends the do block
+
+To capitalize (or use another method) on each element of array called names:
+
+names.each { |randomvariablename| puts "Hello #{randomvariablename.capitalize}" }
+
+Using the select method to pickup all the odd numbers from an array y:
+
+y.select { |number| number.odd? } # selects the value and returns it only if the condition is met
+
+To join the elements of an array named p:
+
+p.join
+
+To join the elements of an array with space in between each element:
+
+p.join(" ")
+
+To join the elements of an array with dash in between each element:
+
+p.join("-")
+
+
+
+Hashes - Text with directions, references and code
+Section 2, Lecture 29
+
+To create a hash called my_details include the elements within { }:
+
+my_details = {'name' => 'mashrur', 'favcolor' => 'red'}
+
+To access the value and notify me what favcolor is:
+
+my_details["favcolor"]
+
+Alternate syntax to create key, value pairs in hash:
+
+myhash = {a: 1, b: 2, c: 3, d: 4}
+
+To access the value for key c above:
+
+myhash[:c]
+
+To add a key,value pair to the hash above:
+
+myhash[:d] = 7
+
+myhash[:name] = "Mashrur"
+
+To delete a key,value pair simply delete the key:
+
+myhash.delete(:d)
+
+To iterate through a hash using .each method and print out value:
+
+myhash.each { |somekey, somevalue| puts somevalue }
+
+To iterate through a hash using .each method and print out both key and value in friendly format:
+
+myhash.each { |somekey, somevalue| puts "The key is #{somekey} and the value is #{somevalue}" }
+
+To iterate through and delete a items from a hash based on a condition (in the condition below if the value is greater than 3:
+
+myhash.each { |k, v| myhash.delete(k) if v > 3 }
+
+Use select method to display items only if value of the item is odd
+
+myhash.select { |k, v| v.odd? }
+
+
+
+Ruby Style Guide - Text with directions and references
+Section 2, Lecture 31
+
+Link for style guide:
+
+github.com/bbatsov/ruby-style-guide
+
+Soft tabs: 2 spaces, convert tabs to spaces
+
+class names: CamelCase
+
+ThisIsCamelCase
+
+file names: snake_case
+
+this_is_snake_case.rb
+
+Create and assign a variable with a long name like this: my_new_variable = "Create long named variables like this"
+
+
+
+Homework Assignment: Area code dictionary - Text directions
+Section 2, Lecture 33
+
+1. Create a dictionary (hash) with 10 city names, where the city name would be a string and the key, and the area code would be the value
+
+2. Display the city names to the user which are available in the dictionary
+
+3. Get input from the user on the city name (hint: use gets.chomp method)
+
+4. Display area code based on user's city choice
+
+5. Loop - keep the program running and prompt the user for new city names to lookup
+
+6. Method to look up area code, this will take in a hash of the dictionary and the city name and will output area code
+
+7. Method to display just city names
+
+
+
+Solution: Area code dictionary - Text version
+Section 2, Lecture 35
+
+dial_book = {
+
+"newyork" => "212",
+
+"newbrunswick" => "732",
+
+"edison" => "908",
+
+"plainsboro" => "609",
+
+"sanfrancisco" => "301"
+
+}
+
+def get_city_names(somehash)
+
+somehash.each { |k, v| puts k }
+
+end
+
+def get_area_code(somehash, key)
+
+somehash[key]
+
+end
+
+loop do
+
+puts "Do you want to lookup an area code based on a city name?(Y/N)"
+
+answer = gets.chomp
+
+if answer != "Y"
+
+break
+
+end
+
+puts "Which city do you want the area code for?"
+
+get_city_names(dial_book)
+
+puts "Enter your selection"
+
+prompt = gets.chomp
+
+if dial_book.include?(prompt)
+
+puts "The area code for #{prompt} is #{get_area_code(dial_book, prompt)}"
+
+else
+
+puts "You entered a city name not in the dictionary"
+
+end
+
+end
+
+
+
+Introduction to Object Oriented Programming - Text directions, refs and code
+Section 2, Lecture 38
+
+Object-oriented programming (OOP) is a programming paradigm that uses objects and their interactions to design and program applications
+
+- Allows the program to block off areas of code that perform certain tasks independently of other areas in the application.
+
+Encapsulation - concept of blocking off areas of code and not making it available to the rest of the program
+
+Abstraction - is simplifying a complex process of a program, an enterprise software solution for example by modeling classes appropriate for it
+
+Inheritance - is used where a class inherits the behavior of another class, referred to as the superclass
+
+Polymorphism - is when a class inherits the behaviors of another class, but has the ability to not inherit everything and change some of it’s inherited behaviors. For example to write a method that does something differently from the inherited method
+
+Classes - It is a blueprint that describes the state and behavior that the objects of the class all share. A class can be used to create many objects. Objects created at runtime from a class are called instances of that particular class.
+
+Example of a user class
+
+class User
+
+attr_accessor :name, :email
+
+def initialize(name, email)
+
+@name = name
+
+@email = email
+
+end
+
+def run
+
+puts "Hey I'm running"
+
+end
+
+def self.identify_yourself
+
+puts "Hey I am a class method"
+
+end
+
+end
+
+user = User.new("mashrur", "mashrur@example.com")
+
+user.run
+
+User.identify_youself # to run this class method you don't need an instance of user you can directly call the
+
+# class User 
+
+
+
+Text solution for Ruby Project - working with JSON
+Section 2, Lecture 42
+
+user_permissions_template.json:
+
+{"accounts": "read",
+
+"policies": "write",
+
+"users": "write"}
+
+user.rb:
+
+require 'json'
+
+class User
+
+attr_accessor :email, :name, :permissions
+
+def initialize(*args)
+
+@email = args[0]
+
+@name = args[1]
+
+@permissions = User.permissions_from_template
+
+end
+
+def self.permissions_from_template
+
+file = File.read 'user_permissions_template.json'
+
+JSON.load(file, nil, symbolize_names: true)
+
+end
+
+def save
+
+self_json = {email: @email, name: @name, permissions: @permissions}.to_json
+
+open('users.json', 'a') do |file|
+
+file.puts self_json
+
+end
+
+end
+
+end
+
+runner.rb:
+
+require 'pp'
+
+require_relative 'user'
+
+user = User.new 'joe@example.com', 'joe'
+
+pp user
+
+user.save
+
+
+
+Solution to Homework Assignment
+Section 3, Lecture 49
+
+Step 1: Ensure you are in the rails_projects directory and not in an existing rails application directory like /workspace or /rails_projects/test_app
+
+Step 2: Create a new rails application using the command ->
+
+rails new alpha-blog
+
+Step 3: Change directory into the new application using ->
+
+cd alpha-blog
+
+Step 4: Run the rails server using the command ->
+
+rails s -b $IP -p $PORT
+
+Step 5: Preview the application and ensure the Rails welcome page shows up by clicking on 'Share' and then the link next to 'Application' line and select 'open'
+
+Step 6: Append a /pages/home to the URL and you'll receive a routing error
+
+Step 7: Go to config/routes.rb file and add the following two routes ->
+
+get 'pages/home', to: 'pages#home'
+
+get 'pages/about', to: 'pages#about'
+
+Step 8: Now if you reload the page after saving the routes file you'll receive uninitialized constant pages controller error
+
+Step 9: Under app/controllers create a pages_controller.rb file by right clicking on controllers folder and selecting the 'New File' option
+
+Step 10: Fill in the pages_controller.rb file with the following code:
+
+class PagesController < ApplicationController
+
+def home
+
+end
+
+def about
+
+end
+
+end
+
+Step 11: Now if you reload any of the pages you'll get a missing template error, so create a folder under views called pages (right click on the views folder and select 'New Folder')
+
+Step 12: Under pages folder, create two files named home.html.erb and about.html.erb
+
+Step 13: Fill in these two files with HTML code
+
+Step 14: To upload an image to your app that you want to reference in your code, go to app/assets/images and right click on images, then select the upload files to images option. Select the image you want to upload. Once uploaded check the images folder and note the name of your file (for example profileimage.png). Then to show this image in your HTML page and to link it to another page, put in the following code (this is if the file you're referencing is profileimage.png) ->
+
+<%= link_to image_tag('profileimage.png'), 'www.mashrurhossain.com' %>
+
+The image tag is for the image, and the link_to turns the image to a link and then you provide the link you want it to go to after the comma
+
+If you simply want to display an image without a link, put in the following code ->
+
+<%= image_tag 'profileimage.png' %>
+
+Step 15: Now if you go to either the pages/home or pages/about link (appended to your cloud9 preview page URL) you will get the home and/or about pages
+
+Step 16: Enter in the path to the about page in the home.html.erb and the homepage in the about.html.erb pages as below ->
+
+In the home.html.erb page
+
+<%= link_to 'About', pages_about_path %>
+
+In the about.html.erb page
+
+<%= link_to 'Home', pages_home_path %>
+
+Ensure you have the appropriate links by checking with rake routes, if using Rails 5 then rails routes
+
+Step 17: Click the links in the refreshed browser pages to ensure they work
+
+Good luck!
+
+
+Root Route, Git and Version Control - Text directions and references
+Section 3, Lecture 51
+
+To set root route to pages controller home:
+
+Navigate to config/routes.rb file and enter in the following code ->
+
+root 'pages#home'
+
+The reference to the root path within the application code would be root_path
+
+Git references:
+
+git-scm.com
+
+git-scm.com/book/en/v2
+
+gitref.org
+
+First time (required only once to configure git for your environment):
+
+git config --global user.name "Your name"
+
+git config --global user.email "Your email"
+
+replace Your name and Your email above with your actual name and email address which you want shown on repo
+
+To display git config settings:
+
+git config --list
+
+Some useful git commands:
+
+To initialize a git repository for your application (do this from within the application directory) ->
+
+git init
+
+Note: if using Rails 5, your application will already come with a git repository initiated, if you initiate a new one, it'll simply do the same step again
+
+To add/track all files ->
+
+git add -A
+
+To commit changes/updates/additions to repository ->
+
+git commit -m "A useful message to help remember details of commit"
+
+To check current state of file updates with already committed code in repo ->
+
+git status
+
+To reject latest changes ->
+
+git checkout -f
+
+Site to create free online code repositories:
+
+github.com
+
+bitbucket.org
+
+
+
+Setup Github Repository - Text directions and references
+Section 3, Lecture 53
+
+To display your public SSH key:
+
+cat ~/.ssh/id_rsa.pub
+
+When creating github repo for application ensure you click the SSH button then push existing repo:
+
+git remote add origin git@github.com:yourgithubaccountname/alpha-blog.git
+
+git push -u origin master # Remember you only need to use this command the first time
+
+To view remotes setup in your environment (from your app directory):
+
+git remote -v
+
+For future pushes to repository:
+
+git push
+
+To deploy app to production, we'll use heroku in this course, link to heroku:
+
+www.heroku.com
+
+
+Production Deploy - Text directions, references and code
+Section 3, Lecture 55
+
+Prepartion for heroku deploy:
+
+- Remove sqlite3 gem from top of application to within group :development, :test do block
+
+- Create a group production ->
+
+group :production do
+
+gem 'pg', '~> 0.11'
+
+gem 'rails_12factor'
+
+end
+
+If using Rails 5, then
+
+group :production do
+
+gem 'pg', '~> 0.11'
+
+end
+
+- Save Gemfile
+
+- Run bundle install --without production to update Gemfile.lock file
+
+- Commit your changes to git repo ->
+
+git add -A
+
+git commit -m "Make app production ready"
+
+Command to install heroku toolbelt to your local environment, cloud9 already has the heroku toolbelt installed, you can check it by typing in heroku --version:
+
+wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
+
+Check heroku:
+
+heroku -v
+
+heroku version
+
+heroku # for list of common heroku commands
+
+From your app directory:
+
+To login to your heroku account from your env ->
+
+heroku login
+
+To add your SSH key to your heroku account so you don't have to use username and password everytime ->
+
+heroku keys:add
+
+To create a new production version of your app hosted in heroku ->
+
+heroku create
+
+To push your application code to heroku (deploy your app) ->
+
+git push heroku master
+
+Ensure you have committed all your local changes to your git repo prior to pushing to heroku by checking git status
+
+To change the name of your application ->
+
+heroku rename newnameofyourapp
+
+replace newnameofyourapp above with the name you'd like to give your app
+
+Your app will then be accessible from the following browser URL ->
+
+newnameofyourapp.herokuapp.com
+
+
+CRUD and Scaffold - Text directions, references and code
+Section 3, Lecture 57
+
+Query language to communicate with database: SQL (Structured Query Language)
+
+CRUD actions:
+
+C - Create
+
+R - Read
+
+U - Update
+
+D - Delete
+
+Scaffold generator command to create Article model, articles controller, views for articles and migration file to create articles table:
+
+rails generate scaffold Article title:string description:text
+
+Command to see routes present for your app:
+
+rake routes
+
+If using Rails 5, rails routes
+
+The line resources :articles in the config/routes.rb file provides the following routes:
+
+- index of articles (listing)
+
+- new article
+
+- create article
+
+- edit article
+
+- update article (put and patch)
+
+- show article
+
+- delete article
+
+From UI perspective ->
+
+- index lists all the articles in the db of the app
+
+- new article deals with the form to enter in new article details
+
+- create handles the submission of the items in the new article form
+
+- edit article deals with the form to enter in edit details for an existing article
+
+- update article deals with the submission of the edited details
+
+- show article displays an individual article based on selection
+
+- delete article deletes an article from the db
+
+
+NAMING CONVENTION IN RAILS: 
+
+if the model class name = Article (in article.rb)(because you want a table called articles)
+    Model name -> Singular, first letter Uppercase
+    Table name -> Plural, lowercase of model name
+        e.g., articles
+    Model name filename -> All lowercase but singular
+        e.g., article.rb
+    Controller name -> plural of model
+        e.g., articles_controller.rb
+
+Intro to Models, Migrations and Rails Console - Text directions and references
+Section 4, Lecture 60
+
+Model name: Article, class: Article -> Capitalized A and singular
+
+File name: article.rb -> singular and all lowercase
+
+Controller file name: articles_controller.rb, class: ArticlesController -> camel case class name, snake case file name both plural
+
+Views folder: articles
+
+Table name: articles -> plural of model
+
+Model name: User, class: User -> Capitalized U and singular
+
+File name: user.rb -> singular and all lowercase
+
+Controller file name: users_controller.rb, class: UsersController -> camel case class name, snake case file name both plural
+
+Views folder: users
+
+Table name: users -> plural of model
+
+To generate a migration to create a table (in this example articles):
+
+rails generate migration create_articles
+
+To add attributes for the table in the migration file, add the following inside create_table block:
+
+t.string :title
+
+t.text :description
+
+t.timestamps
+
+To run the migration file and create the articles table:
+
+rake db:migrate
+
+OR
+
+bundle exec rake db:migrate
+
+If using Rails 5 -> rails db:migrate
+
+To rollback a migration (undo the last migration):
+
+rake db:rollback
+
+If using Rails 5 -> rails db:rollback
+
+To add a column (example: created_at column) to the articles table:
+
+rails generate migration add_created_at_to_articles
+
+Then within the def change method in the migration file:
+
+add_column :articles, :created_at, :datetime
+
+To add a different column (example: name) to a users table:
+
+rails generate migration add_name_to_users
+
+Then within the def change method in the migration file:
+
+add_column :users, :name, :string
+
+In the above two adding column methods, the first argument is the name of the table, second is the attribute name and third is the type
+
+To create a model file for Article:
+
+- In the app/models folder create a file called article.rb
+
+- Fill it in with the following ->
+
+class Article < ActiveRecord::Base
+
+end
+
+If using Rails 5 ->
+
+class Article < ApplicationRecord
+
+end
+
+To start the rails console:
+
+rails console
+
+To test connection to the articles table:
+
+Article.all # classname.all will list all the articles in the articles table
+
+Then simply type in Article (classname) to view the attributes
+
+To create a new article with attributes title and description:
+
+article = Article.new(title: "This is a test title", description: "This is a test description")
+
+article.save
+
+OR
+
+article = Article.new
+
+article.title = "This is a test title"
+
+article.description = "This is a test description"
+
+article.save
+
+Another method to do the same:
+
+article = Article.create(title: "This is a test title", description: "This is a test description") # This will hit the table right away without needing the article.save line
+
+
+Edit, Delete and Validations - Text directions and code
+Section 4, Lecture 62
+
+To find an article with id 2 and edit it's title:
+
+article = Article.find(2) # Here assumption is article with id of 2 was being looked for
+
+article.title = "This is an edited title"
+
+article.save
+
+To delete an article, example with id 5:
+
+article = Article.find(5)
+
+article.destroy
+
+To add validations presence and length validations to article model for title and description:
+
+class Article < ActiveRecord::Base
+
+validates :title, presence: true, length: {minimum: 3, maximum: 50}
+
+validates :description, presence: true, length: {minimum: 10, maximum: 300}
+
+end
+
+If using Rails 5, the first line above would be -> class Article < ApplicationRecord
+
+To find errors in article object while saving (if it's rolled back):
+
+article.errors.any?
+
+article.errors.full_messages
+
+
+Create New Articles from UI - Text directions and code
+Section 4, Lecture 64
+
+In the config/routes.rb file add the following line to add all the routes for articles:
+
+resources :articles
+
+This will add the following routes:
+
+routes path HTTP verb link controller#action
+
+articles index articles GET /articles articles#index
+
+new article new_article GET /articles/new articles#new
+
+create article POST /articles articles#create
+
+edit article edit_article GET /articles/:id articles#edit
+
+update article PATCH /articles/:id articles#update
+
+show article article GET /articles/:id articles#show
+
+delete article DELETE /articles/:id articles#destroy
+
+To create articles controller with a new action, under app/controllers create a file named articles_controller.rb (snake case):
+
+class ArticlesController < ApplicationController
+
+def new
+
+@article = Article.new
+
+end
+
+end
+
+To create a view, under app/views create a folder named articles and within it create a file named new.html.erb then fill in the following:
+
+<h1>Create an article</h1>
+
+<%= form_for @article do |f| %>
+
+<p>
+
+<%= f.label :title %><br/>
+
+<%= f.text_field :title %>
+
+</p>
+
+<p>
+
+<%= f.label :description %><br/>
+
+<%= f.text_area :description %>
+
+</p>
+
+<p>
+
+<%= f.submit %>
+
+</p>
+
+<% end %>
+
+Create action and private article_params method for string parameters in the articles controller (Note: This is not complete):
+
+def create
+
+@article = Article.new(article_params)
+
+@article.save
+
+redirect_to article_path(@article)
+
+end
+
+private
+
+def article_params
+
+params.require(:article).permit(:title, :description)
+
+end
+
+
+Complete New and Show Actions - Text directions and code
+Section 4, Lecture 66
+
+Completed create action in articles controller:
+
+def create
+
+@article = Article.new(article_params)
+
+if @article.save
+
+flash[:notice] = "Article was successfully created"
+
+redirect_to article_path(@article)
+
+else
+
+render 'new'
+
+end
+
+end
+
+Flash message code added to application.html.erb under app/views/layouts folder (right under <body> and above <%= yield %>:
+
+<% flash.each do |name, msg| %>
+
+<ul>
+
+<li><%= msg %></li>
+
+</ul>
+
+<% end %>
+
+Code added to display errors in the new.html.erb template under app/views/articles folder:
+
+<% if @article.errors.any? %>
+
+<h2>The following errors prevented the article from getting created</h2>
+
+<ul>
+
+<% @article.errors.full_messages.each do |msg| %>
+
+<li><%= msg %></li>
+
+<% end %>
+
+</ul>
+
+<% end %>
+
+To create the show action, add the following show method to articles_controller.rb file:
+
+def show
+
+@article = Article.find(params[:id])
+
+end
+
+To create the show view, add a show.html.erb file under the app/views/articles folder and fill in the code:
+
+<h1>Showing selected article</h1>
+
+<p>
+
+Title: <%= @article.title %>
+
+</p>
+
+<p>
+
+Description: <%= @article.description %>
+
+</p>
+
+
+Edit Articles - Text directions and code
+Section 4, Lecture 68
+
+Route for editing articles takes the form ->
+
+/articles/:id/edit
+
+Edit action in the articles controller:
+
+def edit
+
+@article = Article.find(params[:id])
+
+end
+
+Update action in the articles controller:
+
+def update
+
+@article = Article.find(params[:id])
+
+if @article.update(article_params)
+
+flash[:notice] = "Article was successfully updated"
+
+redirect_to article_path(@article)
+
+else
+
+render 'edit'
+
+end
+
+end
+
+To create edit template, create a file named edit.html.erb under the app/views/articles folder and fill in the following code:
+
+<h1>Edit existing article</h1>
+
+<% if @article.errors.any? %>
+
+<h2>The following errors prevented the article from getting created</h2>
+
+<ul>
+
+<% @article.errors.full_messages.each do |msg| %>
+
+<li><%= msg %></li>
+
+<% end %>
+
+</ul>
+
+<% end %>
+
+<%= form_for @article do |f| %>
+
+<p>
+
+<%= f.label :title %><br/>
+
+<%= f.text_field :title %>
+
+</p>
+
+<p>
+
+<%= f.label :description %><br/>
+
+<%= f.text_area :description %>
+
+</p>
+
+<p>
+
+<%= f.submit %>
+
+</p>
+
+<% end %>
+
+
+List Articles and Layout Links - Text directions and code
+Section 4, Lecture 70
+
+To create listings index first add the index action to acticles controller:
+
+def index
+
+@articles = Article.all
+
+end
+
+Create the view file index.html.erb under app/views/articles folder:
+
+<h1>Listing all articles</h1>
+
+<p>
+
+<%= link_to "Create new article", new_article_path %>
+
+</p>
+
+<table>
+
+<tr>
+
+<th>Title</th>
+
+<th>Description</th>
+
+</tr>
+
+<% @articles.each do |article| %>
+
+<tr>
+
+<td><%= article.title %></td>
+
+<td><%= article.description %></td>
+
+<td><%= link_to 'Edit', edit_article_path(article) %></td>
+
+<td><%= link_to 'Show', article_path(article) %></td>
+
+</tr>
+
+<% end %>
+
+</table>
+
+Then update the views with links ->
+
+show.html.erb:
+
+<h1>Showing selected article</h1>
+
+<p>
+
+Title: <%= @article.title %>
+
+</p>
+
+<p>
+
+Description: <%= @article.description %>
+
+</p>
+
+<%= link_to "Edit this article", edit_article_path(@article) %> |
+
+<%= link_to "Back to articles listing", articles_path %>
+
+Add the back to articles listing path to the bottom of both new.html.erb and edit.html.erb pages:
+
+<%= link_to "Back to articles listing", articles_path %>
+
+
+Destroy and Partials - Text directions and code
+Section 4, Lecture 72
+
+Add this link to the homepage (root route) so you can access the blog from the homepage:
+
+<%= link_to "Alpha Blog", articles_path %>
+
+Under app/views/layouts folder create a _messages.html.erb file (messages partial) and remove the following code from application.html.erb to this file:
+
+<% flash.each do |name, msg| %>
+
+<ul>
+
+<li><%= msg %></li>
+
+</ul>
+
+<% end %>
+
+In place of this code in the application.html.erb add the following code:
+
+<%= render 'layouts/messages' %>
+
+Create a file under app/views/articles folder called _form.html.erb and fill it in with the following code (copied from the new or edit.html.erb page):
+
+<% if @article.errors.any? %>
+
+<h2>The following errors prevented the article from getting created</h2>
+
+<ul>
+
+<% @article.errors.full_messages.each do |msg| %>
+
+<li><%= msg %></li>
+
+<% end %>
+
+</ul>
+
+<% end %>
+
+<%= form_for @article do |f| %>
+
+<p>
+
+<%= f.label :title %><br/>
+
+<%= f.text_field :title %>
+
+</p>
+
+<p>
+
+<%= f.label :description %><br/>
+
+<%= f.text_area :description %>
+
+</p>
+
+<p>
+
+<%= f.submit %>
+
+</p>
+
+<% end %>
+
+<%= link_to "Back to articles listing", articles_path %>
+
+Then remove the code above from both new.html.erb and edit.html.erb files and in it's place add the following code:
+
+<%= render 'form' %>
+
+To add the destroy method, first add the following to the articles controller:
+
+def destroy
+
+@article = Article.find(params[:id])
+
+@article.destroy
+
+flash[:notice] = "Article was successfully deleted"
+
+redirect_to articles_path
+
+end
+
+Then in the index.html.erb (listings page) add the following link as one of the <td> items under the show article link:
+
+<td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
+
+
