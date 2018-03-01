@@ -1536,4 +1536,3 @@ Then in the index.html.erb (listings page) add the following link as one of the 
 
 
 
-Test
